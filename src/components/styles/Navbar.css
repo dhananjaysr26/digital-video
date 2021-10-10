@@ -1,0 +1,98 @@
+.navbar{
+    padding: 20px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    position: fixed;
+    line-height: 65px;
+    color: white;
+    z-index: 100;
+    line-height: 20px;
+    font-weight: bolder;
+    /* position:fixed; */
+}
+.navbar .logo{
+    font-size: 32px;
+    color: #00d9ff;
+    text-shadow: -1px -1px 0 rgb(62, 73, 73)000, -1px 1px 0 rgb(190, 58, 58), 1px 1px 0 #000;
+}
+.navbar .logo span{
+    font-size: 40px;
+    color: #00abfae7;
+    text-shadow: -1px -1px 0 rgb(82, 205, 221), 1px -1px 0 rgb(189, 175, 175), -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.nav-links ul{
+    display: inline;
+    width: 50%;
+    float: right;
+    display: flex;
+}
+.navbar li{
+    display: inline;
+    margin-left: 10%;
+    font-size: large;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;   
+}
+.navbar li:hover{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 2px 0px;
+    cursor: pointer;
+}
+.icons{
+    font-size: 32px;
+    text-shadow: none;
+    color: #00abfae7;
+}
+/*  */
+.user-profile,.notification-card {
+    margin-top: 60px;
+    width: 200px;
+    height: 250px;
+    float: right;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+      rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  }
+  
+  .user-profile h3,
+  small {
+    margin-left: 30px;
+  }
+  .user-pic{
+    border-radius: 50%;
+    width: 100px;
+    height: 105px;
+    margin-left: 50px;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  }
+  .sign-out-btn {
+    margin-left: 70px;
+    margin-top: 40px;
+    width: 70px;
+    height: 30px;
+    background: rgb(0, 193, 241);
+    font-size: 15px;
+    border-radius: 10px;
+    border: 0;
+    font-weight: bold;
+
+  }
+  .sign-out-btn:hover {
+    cursor: pointer;
+  }
+  .notification-card h3{
+      padding: 10px;
+      text-align: center;
+  }
+  .notification-card ul{
+margin: 10px;
+padding-left: 20px;
+  }
+  .notification-card li{
+      list-style:decimal;
+      margin-top: 10px;
+  }
