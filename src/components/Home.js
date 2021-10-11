@@ -52,7 +52,6 @@ function myfav(index){
               <img src={data.thumbnailUrl} className="image__img" />
               <div className="image__overlay">
                 <div className={myfav(index)?"image__heart_red":"image__heart"} onClick={()=>{setMyIndex(oldArray => [...oldArray, index])
-                alert(index)
                 }}><FaHeart/></div>
           <div className="image__title">{data.title}</div>
           <p className="image__description">{data.description}</p>
