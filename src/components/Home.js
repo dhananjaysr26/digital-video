@@ -28,15 +28,16 @@ function Home() {
         <p>All Videos</p>
       </div>
       <div className="video-container">
-      {post.map((data, index) => {
-          var url=data.thumbnailUrl;
-                            return (
-                                <div className="video-card" >
-                                    <img src={data.thumbnailUrl} className="card-img"/>
-                                <p className="card-title">{data.title}</p>
-                            </div>
-                            )
-      })}
+        {post.map((data, index) => {
+          return (
+            <div className="video-card">
+              <img src={data.thumbnailUrl} className="card-img" />
+
+              <h1>{data.tags}</h1>
+              <p className="card-title">{data.title}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

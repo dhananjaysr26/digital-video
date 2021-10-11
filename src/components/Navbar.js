@@ -15,7 +15,7 @@ function Navbar() {
             <span className="logo">digital <span>X</span></span>
                 <ul>
                     <li onClick={()=>history.push("/")}>Home</li>
-                    <li onClick={()=>history.push("/")}>About</li>
+                    <li onClick={()=>history.push("/profile")}>Profile</li>
                     <li onClick={()=>history.push("/login")}>Login</li>
                     <li> <MdCircleNotifications className="icons" 
                     onClick={()=>notification?setNotification(0):setNotification(1)}
