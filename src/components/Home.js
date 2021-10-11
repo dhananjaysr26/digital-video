@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import "./styles/Home.css";
-import userPic from "../assets/user.png"
+import { FaHeart } from "react-icons/fa";
 
 function Home() {
   const [post, setPost] = useState([]);
@@ -37,23 +37,17 @@ function Home() {
         {post.map((data, index) => {
           return (
             <div className="video-card">
-              <img src={data.thumbnailUrl} className="card-img" />
-              <h1>{data.tags}</h1>
-              <p className="card-title">{data.title}</p>
+              <img src={data.thumbnailUrl} className="image__img" />
+              <div className="image__overlay">
+                <div className="image__heart_red"><FaHeart/></div>
+          <div className="image__title">{data.title}</div>
+          <p className="image__description">{data.description}</p>
+        </div>
             </div>
           );
         })} 
         
-      </div>
-      <div className="image-container">
-        <img className="image__img" src={userPic} alt="back-image" />
-        <div className="image__overlay">
-          <div className="image__title">Title</div>
-          <p className="image__description">I am Description</p>
-        </div>
-
-      </div>
-      
+      </div>      
     </div>
   );
 }
