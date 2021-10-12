@@ -1,13 +1,26 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import "./styles/Navbar.css"
 import { useHistory} from "react-router-dom";
 import { MdCircleNotifications } from "react-icons/md";
 import { FaRegUserCircle } from "react-icons/fa";
 import userPic from "../assets/user.png"
+import { auth } from '../utils/firebase';
 function Navbar() {
     let history = useHistory();
     const [usercard,setUsercard]=useState(0);
     const [notification,setNotification]=useState(0);
+    const[currUser,setCurrUser]=useState(0)
+    const [currUserData,setCurrUserData]=useState([])
+    useEffect(()=>{
+      auth.onAuthStateChanged(function (userData) {
+        if (userData) {
+          setCurrUser(1);
+          setCurrUserData(userData)
+        } else {
+          setCurrUser(0)
+        }
+      });
+    },[])
     return (
         <div className="head-container">
         <div className="navbar">
@@ -30,14 +43,21 @@ function Navbar() {
             
         </div>
         {
-                        usercard ?
+                       currUser& usercard ?
                             <div className="user-profile">
                                 <img src={userPic} className="user-pic" />
                                 <h3>Dhananjay Singh</h3>
-                                <small>121billion@gmail.com</small>
-                                <button className="sign-out-btn" ><a>Sign out</a></button>
+                                <small>{currUserData.email}</small>
+                                <button className="sign-out-btn" ><a onClick={()=>{
+                                    auth.signOut().then(()=>{
+                                        alert("LogOut Successfully!")
+                                        history.push("/")
+                                    })
+                                }}>Sign out</a></button>
                             </div>
-                            : <p></p>
+                            :  !currUser&usercard?    <div className="user-profile">
+                            <button className="sign-out-btn" ><a onClick={()=>history.push("/login")}>Login Here</a></button>
+                        </div>:<p></p>
                     }
                             {
                         notification ?

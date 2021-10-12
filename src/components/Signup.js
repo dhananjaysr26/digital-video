@@ -1,13 +1,24 @@
-import React,{ useState} from 'react'
+import React,{ useState,useEffect} from 'react'
 import "./styles/Signin.css";
 import { useHistory } from "react-router-dom";
 
 import { useAuth } from '../contexts/AuthContext';
+import { auth } from '../utils/firebase';
 export default function Signup() {
 let history = useHistory();
 const [email,setEmail]=useState('')
 const [password,setPassword]=useState('')
 const [isSubmitting,setIsSubmitting]=useState(false);
+const[currUser,setCurrUser]=useState(0)
+useEffect(()=>{
+  auth.onAuthStateChanged(function (userData) {
+    if (userData) {
+      setCurrUser(1);
+      alert("You Need To LogOut First")
+      history.push("/")
+    }
+  });
+},[])
 
   const {signup,currentUser}=useAuth()
   console.log(signup);

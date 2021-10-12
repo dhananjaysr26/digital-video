@@ -3,7 +3,7 @@ import {BrowserRouter as Router,Redirect,Route,Switch,useLocation} from 'react-r
 import Home from '../components/Home'
 import Navbar from '../components/Navbar'
 import PageNotFound from '../components/PageNotFound'
-import profile from '../components/profile'
+import Profile from '../components/Profile'
 import Signin from '../components/Signin'
 import Signup from '../components/Signup'
 export default function AppRouter() {
@@ -15,7 +15,7 @@ export default function AppRouter() {
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Signin} />
             <Route exact path='/register' component={Signup} />
-            <Route exact path='/profile' component={profile} />
+            <Route exact path='/profile' component={Profile} />
             <Route exact path='*' component={PageNotFound} />
           </Switch>
         </Router>

@@ -4,12 +4,28 @@ import { useAuth } from "../contexts/AuthContext";
 import "./styles/Home.css";
 import { FaHeart } from "react-icons/fa";
 import MyModalVideo from "./MyModalVideo";
+import { auth } from "../utils/firebase";
 
 function Home() {
   const [post, setPost] = useState([]);
   const [filterPost, setFilterPost] = useState([]);
   const [onfilter, setOnfilter] = useState(0);
   const [myIndex, setMyIndex] = useState([]);
+  const[currUser,setCurrUser]=useState(0)
+  const [currUserData,setCurrUserData]=useState([])
+  useEffect(()=>{
+    auth.onAuthStateChanged(function (userData) {
+      if (userData) {
+        console.log("user is LOG IN");
+        setCurrUser(1);
+        setCurrUserData(userData)
+        console.log(userData);
+      } else {
+        console.log("user is LOG OUT");
+      }
+    });
+  },[])
+
 
   const filterItems=(mytags)=>{
     const myPost=[];
