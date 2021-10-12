@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Signin.css";
 import { useHistory } from "react-router-dom";
+import {MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
 import { useAuth } from "../contexts/AuthContext";
 import { auth } from "../utils/firebase";
 
@@ -45,7 +47,7 @@ export default function Signin() {
         <div className="screen__content">
           <form className="login">
             <div className="login__field">
-              <i className="login__icon fas fa-user"></i>
+            <i className="login__icon"><MdEmail/></i>
               <input
                 type="email"
                 className="login__input"
@@ -55,7 +57,7 @@ export default function Signin() {
               />
             </div>
             <div className="login__field">
-              <i className="login__icon fas fa-lock"></i>
+            <i className="login__icon"><RiLockPasswordFill/></i>
               <input
                 type="password"
                 className="login__input"
