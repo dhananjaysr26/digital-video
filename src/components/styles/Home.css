@@ -35,6 +35,12 @@
     border-radius: 15px;
     box-shadow: #00abfae7 0px 0px 0px 1px inset,
         rgba(1, 255, 234, 0.9) 0px 0px 0px 1px;
+        cursor: pointer;
+}
+.home-tags li:hover{
+    color: rgba(1, 255, 234, 0.9);
+    text-shadow: -1px -1px 0 rgb(98, 98, 98);
+
 }
 .heading{
     font-size: 32px;
@@ -164,6 +170,11 @@
         display: block;
         background-color: rgb(255, 255, 255);
         margin-top: 10px;
+        cursor: pointer;
+    }
+    .home-tags li:hover{
+        color: rgba(1, 255, 234, 0.9);
+        text-shadow: -1px -1px 0 rgb(98, 98, 98);
     }
 
     .video-container {
