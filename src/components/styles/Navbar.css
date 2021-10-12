@@ -3,13 +3,15 @@
     width: 100%;
     background-color: transparent;
     border: none;
-    line-height: 65px;
     color: white;
     /* position:fixed; */
     z-index: 100;
     line-height: 20px;
     font-weight: bolder;
     background: rgba(0, 0, 0, 0.01);
+}
+.head-container{
+  width: 100%;
 }
 .navbar .logo{
     font-size: 32px;

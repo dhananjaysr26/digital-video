@@ -9,7 +9,7 @@ function Navbar() {
     const [usercard,setUsercard]=useState(0);
     const [notification,setNotification]=useState(0);
     return (
-        <div>
+        <div className="head-container">
         <div className="navbar">
             <div className="nav-links">
             <span className="logo">digital <span>X</span></span>
