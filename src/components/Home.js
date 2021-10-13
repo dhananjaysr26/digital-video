@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { useAuth } from "../contexts/AuthContext";
 import "./styles/Home.css";
 import { FaHeart } from "react-icons/fa";
 import MyModalVideo from "./MyModalVideo";

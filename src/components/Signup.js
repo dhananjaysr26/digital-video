@@ -15,7 +15,6 @@ export default function Signup() {
     auth.onAuthStateChanged(function (userData) {
       if (userData) {
         setCurrUser(1);
-        alert("You Need To LogOut First");
         history.push("/");
       }
     });

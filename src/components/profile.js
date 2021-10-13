@@ -12,7 +12,6 @@ const Profile = () => {
         setCurrUser(1);
         setCurrUserData(userData);
       } else {
-        alert("You Need To login For Acces this Page!");
         history.push("/login");
       }
     });

@@ -16,8 +16,6 @@ export default function Signin() {
   useEffect(() => {
     auth.onAuthStateChanged(function (userData) {
       if (userData) {
-        setCurrUser(1);
-        alert("You Need To LogOut First");
         history.push("/");
       }
     });
@@ -77,6 +75,9 @@ export default function Signin() {
           </form>
           <div className="link">
             <span onClick={() => history.push("/register")}>Register Here</span>
+            <span style={{fontSize:"10px",display:"block",marginTop:"10px"}} onClick={()=>{setEmail("121billion@gmail.com")
+          setPassword("123456")}
+          }>Use Demo User</span>
           </div>
         </div>
         <div className="screen__background">
